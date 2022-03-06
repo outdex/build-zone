@@ -7,7 +7,7 @@ installpkg() {
 maininstall() { 
     while read p; do
       installpkg "$p"
-    done <programs
+    done < "../programs"
 }
 
 maininstall
