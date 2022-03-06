@@ -9,3 +9,5 @@ maininstall() {
       installpkg "$p"
     done <programs
 }
+
+maininstall
