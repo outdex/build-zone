@@ -1,13 +1,16 @@
 #!/bin/sh
 
+progsfile="https://raw.githubusercontent.com/outdex/build-zone/main/programs"
+
 installpkg() { 
   pacman --noconfirm --needed -S "$1" >/dev/null 2>&1
 }
 
-maininstall() { 
+maininstall() {
+   
     while read p; do
       installpkg "$p"
-    done < "../programs"
+    done < (curl -Ls "$progsfile")
 }
 
 maininstall
