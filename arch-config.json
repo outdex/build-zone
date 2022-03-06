@@ -1,0 +1,17 @@
+{
+  "audio": "pipewire",
+  "bootloader": "grub-install",
+  "filesystem": "btrfs",
+  "hostname": "runner",
+  "kernels": [
+        "linux"
+  ],
+  "keyboard-language": "us",
+  "mirror-region": "Worldwide",
+  "ntp": true,
+  "packages": ["git"],
+  "profile": "minimal",
+  "sys-encoding": "utf-8",
+  "sys-language": "en_US",
+  "timezone": "Europe/Stockholm",
+}
