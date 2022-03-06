@@ -10,7 +10,7 @@ maininstall() {
    
     while read p; do
       installpkg "$p"
-    done < (curl -Ls "$progsfile")
+    done <<< "$(curl -Ls "$progsfile")"
 }
 
 maininstall
