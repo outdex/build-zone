@@ -1,15 +1,15 @@
 #!/bin/sh
+user="dex"
+dotfilesrepo="https://github.com/outdex/ledot-zone.git"
+repobranch="main"
 
-dotfiles="https://raw.githubusercontent.com/outdex/build-zone/main/programs"
-
-installpkg() {
-  pacman --noconfirm --needed -S "$1" >/dev/null 2>&1
+clonegitrepo() {
+    [ -z "$3" ] && branch="main" || branch="$repobranch"
+    dir=$(mktemp -d)
+    [ ! -d "$2" ] && mkdir -p "$2"
+    chown "$user":wheel "$dir" "$2"
+    sudo -u "$user" git clone --recursive -b "$branch" --depth 1 --recurse-submodules "$1" "$dir" >/dev/null 2>&1
+    sudo -u "$user" cp -rfT "$dir" "$2"
 }
 
-maininstall() {
-  curl -Ls "$dotfiles" | while IFS= read -r p; do
-    installpkg "$p"
-  done
-}
-
-maininstall
+clonegitrepo "$dotfilesrepo" "/home/$user" "$repobranch"

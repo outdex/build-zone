@@ -3,6 +3,10 @@ xorg-xwininfo
 xorg-xinit
 ttf-linux-libertine
 xcompmgr
+pipewire
+pipewire-pulse
+pulsemixer
+pamixer
 dunst
 neovim
 xclip
