@@ -12,4 +12,9 @@ maininstall() {
   done
 }
 
+checkdeps() {
+  command -v curl >/dev/null 2>&1 || { echo >&2 installpkg curl; exit 1; }
+}
+
+checkdeps
 maininstall
