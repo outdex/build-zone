@@ -12,4 +12,10 @@ clonegitrepo() {
     sudo -u "$user" cp -rfT "$dir" "$2"
 }
 
+createsymlinks(){
+    ln -s /home/$user/.config/x11/xprofile /home/$user/.xprofile
+    ln -s /home/$user/.config/x11/xinitrc /home/$user/.xinitrc
+}
+
 clonegitrepo "$dotfilesrepo" "/home/$user" "$repobranch"
+createsymlinks
