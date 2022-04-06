@@ -3,10 +3,9 @@
 progsfile="https://raw.githubusercontent.com/outdex/build-zone/main/programs"
 
 checkrunasroot(){
-  if [ `id -u` != 0 ] ; then
+  if [ ! `id -u` = 0 ] ; then
+      echo "ERROR: This script must be run as the root user"
       exit 1
-  else
-      echo "Please run this script as root"
   fi
 }
 
