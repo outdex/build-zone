@@ -1,5 +1,6 @@
 #!/bin/sh
-checkrunasroot(){
+
+checkrunasroot() {
   if [ ! `id -u` = 0 ] ; then
       echo "ERROR: This script must be run as the root user"
       exit 1
