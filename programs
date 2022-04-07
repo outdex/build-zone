@@ -1,7 +1,6 @@
 xorg-server
 xorg-xwininfo
 xorg-xinit
-ttf-linux-libertine
 xcompmgr
 pipewire
 pipewire-pulse
